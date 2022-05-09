@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>Image사용하기</h1>
+<p>개발자환경의 경로 : /webProject/src/main/webapp가 ROOT </p>
+<p>실행환경 : /webProject 가 ROOT</p>
+
+
+<p>절대경로이용하기</p>
+<img alt="우산" src="http://localhost:9090/webProject/images/umbrella.jpg" width="200px" height="150px" />
+<p>절대경로이용하기2.. 파일이 폴더이동되어도 수정없음(더 좋다)</p>
+<img alt="우산" src="/webProject/images/umbrella.jpg" width="200px" height="150px" />
+<p>상대경로이용하기</p>
+<img alt="우산" src="../images/umbrella.jpg" width="200px" height="150px" />
+
+<figure>
+<p>다음 이미지</p>
+<img alt="다음" src="https://t1.daumcdn.net/daumtop_chanel/op/20200723055344399.png" />
+<figcaption>다음사이트의 주소로 연결함</figcaption>
+</figure>
+</body>
+</html>
