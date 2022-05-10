@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		
+		<link href="common.css" rel="stylesheet" type="text/css">
+		<style type="text/css">
+			/*  internal css */
+			h1 { background-color: orange;}
+			#here {
+			
+				border:1px solid blue;
+			}
+		
+		</style>
+		<script type="text/javascript">
+			alert("1. head작성함");
+			console.log("1. head 작성함");
+		</script>
+		<script>
+			alert("2. head작성함");
+			console.log("2. head 작성함");
+			function call() {
+				document.getElementById("here").innerHTML = "<h1>KOSTA</h1>";				
+			}
+		</script>
+			
+		<script src="external.js"></script>
+		<script>
+			 f1(); 
+			 f2();
+		</script>				
+		
+	</head>
+	<body onload="call();">
+		<script>
+			alert("3. body 시작에 작성함");
+			console.log("3. body 시작에 작성함... 권장아님");
+		</script>
+	
+		<h1>JavaScript의 표준은 ECMAscript이다.</h1>
+		<button onclick="alert('버튼 누름');">버튼</button>
+		<div id="here">여기</div>
+				<script>
+			alert("4. body 끝에 작성함");
+			console.log("3. body 끝에 작성함... 권장아님");
+			
+		</script>
+		
+	</body>
+</html>

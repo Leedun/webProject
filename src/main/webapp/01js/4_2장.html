@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<h1>기본문법</h1>
+<hr>
+
+<button onclick="call();" >논리연산자 </button>
+<button onclick="call2();" >논리연산자2 </button>
+<button onclick="call3();" >식별자 재선언 </button>
+<button onclick="call4();" >(BOM)window객체의 모든정보 </button>
+
+<input type="text" id = "phone" value="">
+<button onclick="call5();" > prompt함수 </button>
+<button onclick="call6();" > confirm함수 </button>
+<button onclick="call7();" > 문자와 숫자혼합 </button>
+<button onclick="call8();" > 타입변형 </button>
+<button onclick="call9();" > 타입변형(boolean) </button>
+<hr>
+<div id = "here"> 여기</div>
+
+
+<script type="text/javascript">
+var obj = document.getElementById("here");
+
+
+function call9() {
+	//false
+	obj.innerHTML += "<br>" + Boolean(0);
+	obj.innerHTML += "<br>" + Boolean("");
+	obj.innerHTML += "<br>" + Boolean(NaN);
+	obj.innerHTML += "<br>" + Boolean(null);
+	obj.innerHTML += "<br>" + Boolean(undefined);
+		
+	//true
+	obj.innerHTML += "<br>" + Boolean(10);
+	obj.innerHTML += "<br>" + Boolean("aa"+"<br>");
+	
+	obj.innerHTML += 0 == false;
+	obj.innerHTML += 1 == true;
+	obj.innerHTML += 0 == "";
+	obj.innerHTML += 10 == "10";
+	
+	//값과 타입을 비교한다.
+	obj.innerHTML += 10 === "10";
+	
+	
+}
+function call8() {
+	var a = '500달러';
+	var b = 1000;
+	
+	//NaN(Not a Number)
+	obj.innerHTML = parseInt(a)+b;
+	//obj.innerHTML = Number(a)+b;
+	//obj.innerHTML += "<br>";
+	//obj.innerHTML += a * String(b);
+	
+}
+function call7() {
+
+	obj.innerHTML = 100+'200';	//+는 문자가 우선순위높다
+	obj.innerHTML += '100'+'200';
+	obj.innerHTML += "<br>";
+	obj.innerHTML += 100*'200';	//*는 숫자가 높다.
+	obj.innerHTML += '100'*'200';	
+	obj.innerHTML += '100 * 200';	
+	
+	
+}
+function call6() {
+	var result = confirm("수락하시겠습니까?");
+	
+	//조건문
+	if(result)
+		{
+			obj.innerHTML = "감사합니다.";
+		}
+	else
+		{
+			obj.innerHTML = "다음 기회에 뵙겠습니다.";
+		}
+	//3항연산자
+	obj.innerHTML += result?"감사합니다":"다음 기회에 뵙겠습니다.";
+	
+}
+
+function call5() {
+	var phonObj = document.getElementById("phone");
+	var myPhone = phonObj.value;
+	if(myPhone == "")
+	{
+		// alert("전화번호를 입력하세요");
+		var inputData = prompt("전화번호를 입력하세요","010");
+		phonObj.value = inputData;
+		phonObj.focus();
+	}	
+}
+
+function call4() {
+	for(var pro in window)
+		{
+			obj.innerHTML += "<br>" + pro +"==>" + window[pro];
+		}
+}
+
+function call3() {
+	var laret = "식별자제선언";
+	alert(alert);
+	
+}
+
+function  call(){
+	
+	//&&는 앞의 결과가 틀리면 뒷부분 수행안함 (자바와 같다)
+	//&는 앞의 결과와 무관하게 뒷부분 모두 수행 (자바와 같다)
+	var a= 100;
+	obj.innerHTML = a > 20 && ++a>30;
+	obj.innerHTML +="<br>a=" +a;
+	
+	
+}
+
+function call2() {
+	obj.innerHTML
+	 = 30>20 && 20>10;
+}
+</script>
+ 
+</body>
+</html>
