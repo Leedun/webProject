@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+
+function focusChange(obj){	
+	//length가 6자리이면 focus 이동하기 focus()
+	if(obj.value.length==6){
+		document.querySelector("#jumin2").focus();
+	}
+}
+
+
+function genderCheck(jumin2, obj){
+	//첫번째 1자리가 1,3이면 남자 check
+	//첫번째 1자리가 2,4이면 여자 check
+	
+	console.dir(obj);
+	console.log(obj.childNodes[1].childNodes[7].value);
+	//console.jumin2.value
+	
+	
+	
+	
+	var first = jumin2.substr(0,1);
+	if(first==1 || first==3){
+		//document.getElementsByName("gender").value = "man";
+		(obj.radio.value="man").checked= "checked";
+		//gender.value = "man";
+	}else if(first==2 || first==4){
+		//document.getElementsByName("gender").value = "women";
+		//gender.value = "women";
+		(obj.radio.value="women").checked= "checked";
+	}
+	
+		
+}
+
+
+
+
+function check(){
+	//radiobutton성별과 주민번호 뒷자리 1번쨰 값 비교해서 맞으면 OK, 틀리면 경고
+	
+}
+
+</script>
+
+</head>
+<body>
+
+
+
+
+<form name="form">
+  <fieldset>
+    <legend>개인정보</legend>
+     <label for="jumin1">주민번호</label>
+     <input type="text" name="jumin1" id="jumin1" size="6"  maxlength="6"
+       onkeyup="focusChange(this);" /> -
+     <input type="text" name="jumin2" id="jumin2" size="7" maxlength="7"
+       onblur="genderCheck( this.value , form )"/> <br/> <br/>
+     <div id="display"> </div> 
+     <label for="gender">성별</label>
+     <input type="radio" name="gender"   value="man"
+     checked="checked" disabled="disabled"/>남자
+     <input type="radio" name="gender"   value="woman"
+             disabled="disabled"/>여자
+ 
+     <input type="button" value="check" onclick="check()" />
+  </fieldset>
+ 
+</form>
+
+</body>
+</html>
